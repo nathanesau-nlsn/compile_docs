@@ -21,6 +21,9 @@ git clone https://github.com/google/protobuf.git
 cd protobuf
 git submodule update --init --recursive
 ./autogen.sh
+
+# SHOULD BE ./configure --disable-shared
+# WITH GCC9???
 ./configure
 make
 make check
