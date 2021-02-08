@@ -16,12 +16,15 @@ yum -y install libtool
 yum -y install gcc-c++
 yum -y install make
 
+# output
+mkdir /protobuf_install
+
 # build protobuf
 git clone https://github.com/google/protobuf.git
 cd protobuf
 git submodule update --init --recursive
 ./autogen.sh
-./configure
+./configure --prefix=/protobuf_install --disable-shared
 make
 make check
 make install

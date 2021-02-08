@@ -7,13 +7,19 @@ Last updated: Feb 8, 2021.
 ```bash
 docker run -it --rm nathanesaunlsn/compile_docs:centos73_protobuf /bin/bash
 
+# install cmake
+yum -y install cmake
+
+# output
+mkdir /protobuf_c_install
+
 # build protobuf-c
 git clone https://github.com/protobuf-c/protobuf-c
 cd protobuf-c
 git submodule update --init --recursive
 ./autogen.sh
-export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-./configure
+export PKG_CONFIG_PATH=/protobuf_install/lib/pkgconfig
+./configure --prefix=/protobuf_c_install --disable-shared
 make
 make install
 ```
