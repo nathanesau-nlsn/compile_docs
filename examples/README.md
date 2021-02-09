@@ -53,48 +53,40 @@ make
 
 ```bash
 # see https://github.com/nats-io/nats.c/tree/master/examples/getstarted
-docker run -it --rm -v "D:/compile_docs/examples/natsc-examples":/natsc-examples nathanesaunlsn/compile_docs:ubuntu2004_natsc /bin/bash
+docker run -it --rm -v "F:/compile_docs/examples/natsc-examples":/natsc-examples nathanesaunlsn/compile_docs:ubuntu2004_natsc /bin/bash
 
 # install cmake
 apt-get -y install cmake
 apt-get -y install protobuf-compiler
 
-# TODO add examples
-
-# currently no examples in this repo, so use nats examples instead
-cd nats.c
-cd examples
+# build
+cd natsc-examples
+mkdir build
+cd build
 cmake ..
 make
 
-# run the programs
-cd examples
-./nats-connect
-./nats-replier
+# run the program
+./main
 ```
 
 ### Docker (CentOS 7.3)
 
-Not tested.
-
 ```bash
 # see https://github.com/nats-io/nats.c/tree/master/examples/getstarted
-docker run -it --rm -v "D:/compile_docs/examples/natsc-examples":/natsc-examples nathanesaunlsn/compile_docs:centos73_natsc /bin/bash
+docker run -it --rm -v "F:/compile_docs/examples/natsc-examples":/natsc-examples nathanesaunlsn/compile_docs:centos73_natsc /bin/bash
 
 # install cmake
 yum -y install cmake
 yum -y install protobuf-compiler
 
-# TODO add examples
-
-# currently no examples in this repo, so use nats examples instead
-cd nats.c
-cd examples
+# build
+cd natsc-examples
+mkdir build
+cd build
 cmake ..
 make
 
 # run the programs
-cd examples
-./nats-connect
-./nats-replier
+./main
 ```
