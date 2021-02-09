@@ -18,8 +18,8 @@ git clone https://github.com/protobuf-c/protobuf-c
 cd protobuf-c
 git submodule update --init --recursive
 ./autogen.sh
-export PKG_CONFIG_PATH=/protobuf_install/lib/pkgconfig
-./configure --prefix=/protobuf_c_install --disable-shared
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+./configure
 make
 make install
 ```

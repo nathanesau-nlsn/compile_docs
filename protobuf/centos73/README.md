@@ -24,7 +24,7 @@ git clone https://github.com/google/protobuf.git
 cd protobuf
 git submodule update --init --recursive
 ./autogen.sh
-./configure --prefix=/protobuf_install --disable-shared
+./configure
 make
 make check
 make install

@@ -26,9 +26,6 @@ make
 
 ### Docker (CentOS 7.3)
 
-TO FIX!!! 
-NOT WORKING
-
 ```bash
 # see https://github.com/protobuf-c/protobuf-c/wiki/Examples
 docker run -it --rm -v "D:/compile_docs/examples/protobuf-examples":/protobuf-examples nathanesaunlsn/compile_docs:centos73_protobuf_c /bin/bash
@@ -39,6 +36,15 @@ yum -y install protobuf-compiler
 
 # build
 cd protobuf-examples
+mkdir build
+cd build
+# unknown command "protobuf_generate"
+cmake ..
+make
+
+# run the programs
+./add_person_cpp
+./list_people_cpp
 ```
 
 ## natsc-examples
@@ -69,11 +75,11 @@ cd examples
 
 ### Docker (CentOS 7.3)
 
-TO FIX!!! 
-NOT WORKING
+Not tested.
 
 ```bash
 # see https://github.com/nats-io/nats.c/tree/master/examples/getstarted
+docker run -it --rm -v "D:/compile_docs/examples/natsc-examples":/natsc-examples nathanesaunlsn/compile_docs:centos73_natsc /bin/bash
 
 # install cmake
 yum -y install cmake
